@@ -28,4 +28,10 @@ class Api::CartedProductsController < ApplicationController
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @carted_product = CartedProduct.find(params[:id])
+    @carted_product.destroy
+    render json: { message: "Product successfully destroyed" }
+  end
 end
