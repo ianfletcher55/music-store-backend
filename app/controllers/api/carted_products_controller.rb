@@ -1,7 +1,7 @@
 class Api::CartedProductsController < ApplicationController
   def index
     @carted_products = CartedProduct.all
-    render 'index.json.jb'
+    render "index.json.jb"
   end
 
   def create
@@ -13,7 +13,17 @@ class Api::CartedProductsController < ApplicationController
       status: params[:status],
     )
     if @carted_product.save
-      render 'show.json.jb'
+      render "show.json.jb"
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @carted_product = CartedProduct.find(params[:id])
+    @carted_product.quantity = params[:quantity] || @carted_product.quantity
+    if @carted_product.save
+      render "show.json.jb"
     else
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
