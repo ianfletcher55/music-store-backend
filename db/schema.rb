@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 2021_04_07_153116) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "images", force: :cascade do |t|
     t.string "url"
     t.text "description"
@@ -42,9 +48,32 @@ ActiveRecord::Schema.define(version: 2021_04_07_153116) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "product_categories", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "products_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "product_images", force: :cascade do |t|
     t.integer "image_id"
     t.integer "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "brand"
+    t.integer "year"
+    t.string "model"
+    t.string "scale"
+    t.decimal "price", precision: 10, scale: 2
+    t.string "new_used"
+    t.text "description"
+    t.string "category"
+    t.integer "stock"
+    t.integer "weight"
+    t.string "strings"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,0 +1,17 @@
+{
+  id: product.id,
+  name: product.name,
+  brand: product.brand,
+  year: product.year,
+  model: product.model,
+  scale: product.scale,
+  price: product.price,
+  new_used: product.new_used,
+  description: product.description,
+  category: product.category,
+  stock: product.stock,
+  weight: product.weight,
+  strings: product.strings,
+  created_at: product.created_at,
+  updated_at: product.updated_at
+}
