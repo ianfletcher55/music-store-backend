@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     patch "/products/:id" => "products#update"
     delete "/products/:id" => "products#destroy"
 
+    get '/categories' => 'categories#index'
+    post '/categories' => 'categories#create'
+    delete '/categories/:id' => 'categories#destroy'
+
     get "/carted_products" => "carted_products#index"
     post "/carted_products" => "carted_products#create"
     patch "/carted_products/:id" => "carted_products#update"

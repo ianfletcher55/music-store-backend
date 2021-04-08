@@ -12,7 +12,6 @@ class Api::ProductsController < ApplicationController
 
   def create
     @product = Product.new(
-      name: params[:name],
       brand: params[:brand],
       year: params[:year],
       model: params[:model],
@@ -34,7 +33,6 @@ class Api::ProductsController < ApplicationController
 
   def update
     @product = Product.find_by(id: params[:id])
-    @product.name = params[:name] || @product.name
     @product.brand = params[:brand] || @product.brand
     @product.year = params[:year] || @product.year
     @product.model = params[:model] || @product.model
@@ -56,7 +54,7 @@ class Api::ProductsController < ApplicationController
   def destroy
     @product = Product.find_by(id: params[:id])
     @product.destroy
-    render json: { message: "Product successfully destroyed" }
+    render json: { message: 'Product successfully destroyed' }
   end
 
 end
