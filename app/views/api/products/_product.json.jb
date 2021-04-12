@@ -11,6 +11,7 @@
   stock: product.stock,
   weight: product.weight,
   strings: product.strings,
+  images: product.images,
   created_at: product.created_at,
-  updated_at: product.updated_at
+  updated_at: product.updated_at,
 }
