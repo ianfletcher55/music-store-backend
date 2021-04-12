@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_04_12_144143) do
 
   create_table "product_categories", force: :cascade do |t|
     t.integer "category_id"
-    t.integer "products_id"
+    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,20 +1,21 @@
 class Api::ProductCategoriesController < ApplicationController
 
   def create
-    @category = Category.new(
-      name: params[:name]
+    @product_category = ProductCategory.new(
+      product_id: params[:product_id],
+      category_id: params[:category_id]
     )
-    if @category.save
-      render 'index.json.jb'
+    if @product_category.save
+      render json: { message: 'ProductCategory successfully created' }
     else
-      render json: {errors: @category.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: @product_category.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @category = Category.find_by(id: params[:id])
-    @category.destroy
-    render json: { message: 'Category successfully destroyed' }
+    @product_category = ProductCategory.find_by(id: params[:id])
+    @product_category.destroy
+    render json: { message: 'ProductCategory successfully destroyed' }
   end
 
 end

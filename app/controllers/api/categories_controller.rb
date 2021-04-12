@@ -10,7 +10,7 @@ class Api::CategoriesController < ApplicationController
       name: params[:name]
     )
     if @category.save
-      render 'index.json.jb'
+      render json: { message: 'Category successfully created' }
     else
       render json: {errors: @category.errors.full_messages}, status: :unprocessable_entity
     end

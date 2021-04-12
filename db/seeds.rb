@@ -10,6 +10,6 @@ Product.create!(brand: "Gibson", model: "Les Paul Standard", year: 2020, price: 
 Product.create!(brand: "Martin", model: "HD28", year: 2017, price: 3220.00, scale: 1, new_used: "used", description: "Classic herringbone, East Indian rosewood, ebony and Sitka spruce in the shape that started it all: the Dreadnought. Paired with our most comfortable neck, vintage appointments, scalloped, forward-shifted bracing, and a lifetime warranty. Powerful bottom end, rich tone, and strums that will fill the room—music history made new. Also available in Sunburst and Ambertone finish.", category: "acoustic", stock: 1, weight: 9.3, strings: 6)
 Product.create!(brand: "Taylor", model: "Baby Taylor (BT1)", year: 2020, price: 799.51, scale: 1, new_used: "new", description: "The Baby Taylor acoustic guitar is the ultimate travel companion, delivering volume and tone that surprise for its diminutive dimensions. At three-quarters the size of a full-size guitar, the Baby Taylor lives for the road. It also loves little hands, which makes it an irresistible choice for kids taking lessons. Available with either a solid spruce or solid mahogany top.", category: "acoustic", stock: 12, strings: 6)
 
-CartedProduct.create!(user_id: 1, product_id: 1, quantity: 2, status: "carted")
-CartedProduct.create!(user_id: 1, product_id: 2, quantity: 1, status: "carted")
-CartedProduct.create!(user_id: 1, product_id: 3, quantity: 5, status: "carted")
+# CartedProduct.create!(user_id: 1, product_id: 1, quantity: 2, status: "carted")
+# CartedProduct.create!(user_id: 1, product_id: 2, quantity: 1, status: "carted")
+# CartedProduct.create!(user_id: 1, product_id: 3, quantity: 5, status: "carted")
