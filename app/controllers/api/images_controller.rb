@@ -7,7 +7,7 @@ class Api::ImagesController < ApplicationController
       primary: params[:primary]
     )
     if @image.save
-      render 'index.json.jb'
+      render json: { message: 'Image successfully created' }
     else
       render json: {errors: @image.errors.full_messages}, status: :unprocessable_entity
     end
@@ -19,7 +19,7 @@ class Api::ImagesController < ApplicationController
     @image.description = params[:description] || @image.description
     @image.primary = params[:primary] || @image.primary
     if @image.save
-      render "show.json.jb"
+      render json: { message: 'Image successfully updated' }
     else
       render json: { errors: @image.errors.full_messages }, status: :unprocessable_entity
     end
@@ -32,7 +32,3 @@ class Api::ImagesController < ApplicationController
   end
 
 end
-
-t.string "url"
-t.text "description"
-t.boolean "primary"
